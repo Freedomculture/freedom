@@ -2,43 +2,72 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Smooth scrolling
+    // SMOOTH SCROLLING
+
     const links = document.querySelectorAll('a[href^="#"]');
 
     links.forEach(link => {
+
         link.addEventListener("click", function (event) {
+
             const target = document.querySelector(
                 this.getAttribute("href")
             );
 
             if (target) {
+
                 event.preventDefault();
 
                 target.scrollIntoView({
-                    behavior: "smooth"
+                    behavior: "smooth",
+                    block: "start"
                 });
+
             }
+
         });
+
     });
 
-    // Reveal sections when scrolling
+    // SCROLL REVEAL ANIMATION
+
     const sections = document.querySelectorAll(
         ".collection, .about, footer"
     );
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
-        });
-    }, {
-        threshold: 0.15
-    });
+    if ("IntersectionObserver" in window) {
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        sections.forEach(section => {
+
+            section.classList.add("reveal-section");
+
+            observer.observe(section);
+
+        });
+
+    }
 
     console.log("FREEDOM CULTURE website is ready!");
+
 });
