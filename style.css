@@ -10,38 +10,48 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: #080808;
-    color: white;
+    color: #fff;
 }
 
+/* NAVBAR - LIQUID GLASS */
+
 header {
-    width: 100%;
-    background: #080808;
-    border-bottom: 1px solid #222;
+    position: fixed;
+    top: 15px;
+    left: 4%;
+    width: 92%;
+    z-index: 1000;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
 }
 
 .navbar {
-    height: 85px;
-    padding: 0 8%;
+    min-height: 75px;
+    padding: 12px 4%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .logo {
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
     text-decoration: none;
     letter-spacing: 2px;
 }
 
 .logo span {
-    color: #c6a36a;
+    color: #aaa;
 }
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    gap: 30px;
     list-style: none;
 }
 
@@ -55,34 +65,47 @@ header {
 }
 
 .nav-links a:hover {
-    color: #c6a36a;
+    color: white;
 }
 
 .shop-btn {
-    padding: 13px 25px;
-    border: 1px solid #c6a36a;
-    color: #c6a36a;
+    padding: 12px 22px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 30px;
+    color: white;
     text-decoration: none;
     font-size: 11px;
     letter-spacing: 1px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
     transition: 0.3s;
 }
 
 .shop-btn:hover {
-    background: #c6a36a;
+    background: white;
     color: black;
 }
 
+/* HERO SECTION */
+
 .hero {
-    min-height: 680px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 80px 12%;
+    padding: 140px 12% 80px;
+
     background:
-        linear-gradient(90deg, #080808 5%, rgba(8,8,8,0.85) 50%, rgba(8,8,8,0.3)),
-        url('[https://pin.it/BoSPNz2BH]');
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.2)
+        ),
+        url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=2000');
+
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -90,7 +113,7 @@ header {
 }
 
 .subtitle {
-    color: #c6a36a;
+    color: #ccc;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 4px;
@@ -105,11 +128,11 @@ header {
 }
 
 .hero h1 span {
-    color: #c6a36a;
+    color: #ccc;
 }
 
 .description {
-    color: #bbb;
+    color: #ddd;
     font-size: 14px;
     line-height: 2;
     margin: 30px 0;
@@ -117,24 +140,32 @@ header {
 
 .hero-btn {
     display: inline-block;
-    padding: 18px 28px;
-    background: #c6a36a;
-    color: #080808;
+    padding: 17px 27px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 40px;
+    background: rgba(255,255,255,0.12);
+    color: white;
     text-decoration: none;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 1px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     transition: 0.3s;
 }
 
 .hero-btn:hover {
     background: white;
+    color: black;
     transform: translateY(-3px);
 }
 
+/* COLLECTION */
+
 .collection {
-    padding: 110px 20px;
+    padding: 120px 20px;
     text-align: center;
+    background: #0a0a0a;
 }
 
 .collection h2 {
@@ -149,8 +180,10 @@ header {
     letter-spacing: 3px;
 }
 
+/* ABOUT */
+
 .about {
-    padding: 100px 20px;
+    padding: 110px 20px;
     background: #111;
     text-align: center;
 }
@@ -164,9 +197,12 @@ header {
     color: #aaa;
 }
 
+/* FOOTER */
+
 footer {
-    padding: 45px 20px;
+    padding: 50px 20px;
     text-align: center;
+    background: #080808;
 }
 
 footer h2 {
@@ -181,21 +217,49 @@ footer p {
     letter-spacing: 1px;
 }
 
+/* MOBILE */
+
 @media (max-width: 768px) {
+    header {
+        top: 8px;
+        left: 3%;
+        width: 94%;
+    }
+
     .navbar {
-        padding: 0 5%;
+        min-height: 65px;
+        padding: 10px 4%;
+    }
+
+    .logo {
+        font-size: 16px;
     }
 
     .nav-links {
         display: none;
     }
 
+    .shop-btn {
+        padding: 10px 15px;
+        font-size: 10px;
+    }
+
     .hero {
-        min-height: 600px;
-        padding: 60px 7%;
+        min-height: 100vh;
+        padding: 130px 7% 70px;
+        background-position: center;
     }
 
     .hero h1 {
+        font-size: clamp(48px, 12vw, 75px);
         letter-spacing: -3px;
+    }
+
+    .collection h2 {
+        font-size: 28px;
+    }
+
+    .about h2 {
+        font-size: 24px;
     }
 }
