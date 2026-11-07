@@ -23,10 +23,7 @@ body {
     color: white;
 }
 
-/* FULL PAGE BACKGROUND
-   Fixed layer works independently
-   from the page sections and mobile scroll.
-*/
+/* FULL PAGE BACKGROUND */
 
 body::before {
     content: "";
@@ -40,7 +37,7 @@ body::before {
             rgba(0,0,0,0.65),
             rgba(0,0,0,0.78)
         ),
-       url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=2000');
+        url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=2000');
 
     background-size: cover;
     background-position: center center;
