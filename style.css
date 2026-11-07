@@ -84,6 +84,22 @@ header {
     color: black;
 }
 
+/* PAGE BACKGROUND */
+
+body {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.78)
+        ),
+        url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=2000');
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 /* HERO */
 
 .hero {
@@ -92,18 +108,12 @@ header {
     align-items: center;
     padding: 140px 12% 80px;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0.88),
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.2)
-        ),
-        url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=2000');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.30),
+        rgba(0,0,0,0.12)
+    );
 }
 
 .hero-content {
@@ -163,7 +173,7 @@ header {
 .collection {
     padding: 120px 20px;
     text-align: center;
-    background: #0a0a0a;
+    background: rgba(10,10,10,0.45);
 }
 
 .collection h2 {
@@ -182,7 +192,7 @@ header {
 
 .about {
     padding: 110px 20px;
-    background: #111;
+    background: rgba(17,17,17,0.45);
     text-align: center;
 }
 
@@ -200,7 +210,7 @@ header {
 .contact {
     padding: 120px 8%;
     text-align: center;
-    background: #090909;
+    background: rgba(9,9,9,0.45);
 }
 
 .contact h2 {
@@ -259,7 +269,7 @@ header {
     transform: translateY(-5px);
 }
 
-/* TRANSPARENT ICONS */
+/* LIQUID GLASS ICONS */
 
 .glass-icon {
     width: 65px;
@@ -314,7 +324,7 @@ header {
 footer {
     padding: 55px 20px;
     text-align: center;
-    background: #050505;
+    background: rgba(5,5,5,0.45);
     border-top: 1px solid #222;
 }
 
@@ -338,6 +348,11 @@ footer p {
 /* MOBILE */
 
 @media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+    }
 
     header {
         top: 8px;
@@ -366,7 +381,6 @@ footer p {
     .hero {
         min-height: 100vh;
         padding: 130px 7% 70px;
-        background-position: center;
     }
 
     .hero h1 {
