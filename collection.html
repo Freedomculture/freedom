@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE COLLECTION | FREEDOM CULTURE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        .products-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 150px 6% 80px;
+            color: white;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .products-section > h1 {
+            text-align: center;
+            font-size: clamp(35px, 6vw, 60px);
+            font-weight: 900;
+        }
+
+        .products-intro {
+            text-align: center;
+            color: #aaa;
+            margin: 15px 0 55px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .main-product-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 10px;
+            padding: 12px;
+        }
+
+        .product-thumbnails img {
+            width: 65px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 9px;
+            border: 1px solid rgba(255,255,255,.25);
+            cursor: pointer;
+            opacity: .65;
+        }
+
+        .product-thumbnails img:hover {
+            opacity: 1;
+            border-color: white;
+        }
+
+        .product-info {
+            padding: 15px 20px 22px;
+        }
+
+        .product-info h2 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .order-button {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 12px;
+            background: rgba(255,255,255,.1);
+        }
+
+        .order-button:hover {
+            background: rgba(255,255,255,.2);
+        }
+
+        @media(max-width: 700px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-section {
+                padding: 120px 18px 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            FREEDOM CULTURE<span>.</span>
+        </a>
+
+        <a href="index.html" class="glass-collection-btn">
+            BACK HOME ↗
+        </a>
+    </nav>
+</header>
+
+<main class="products-section">
+
+    <h1>THE COLLECTION<span>.</span></h1>
+
+    <p class="products-intro">
+        WEAR YOUR FREEDOM. LIVE YOUR CULTURE.
+    </p>
+
+    <div class="products-grid">
+
+        <!-- T-SHIRT 01 -->
+
+        <article class="product-card">
+
+            <img class="main-product-image"
+                 src="images/tshirt-01-front.jpg"
+                 alt="T-shirt 01">
+
+            <div class="product-thumbnails">
+
+                <img src="images/tshirt-01-front.jpg"
+                     onclick="changeImage(this)" alt="Front">
+
+                <img src="images/tshirt-01-back.jpg"
+                     onclick="changeImage(this)" alt="Back">
+
+                <img src="images/tshirt-01-detail.jpg"
+                     onclick="changeImage(this)" alt="Detail">
+
+            </div>
+
+            <div class="product-info">
+
+                <h2>ESSENTIAL T-SHIRT 01</h2>
+
+                <p class="product-price">199 DH</p>
+
+                <a class="order-button"
+                   target="_blank"
+                   href="https://wa.me/212710822283?text=Hello%20FREEDOM%20CULTURE%2C%20I%20want%20T-shirt%2001">
+                    ORDER NOW ↗
+                </a>
+
+            </div>
+        </article>
+
+
+        <!-- T-SHIRT 02 -->
+
+        <article class="product-card">
+
+            <img class="main-product-image"
+                 src="images/tshirt-02-front.jpg"
+                 alt="T-shirt 02">
+
+            <div class="product-thumbnails">
+
+                <img src="images/tshirt-02-front.jpg"
+                     onclick="changeImage(this)" alt="Front">
+
+                <img src="images/tshirt-02-back.jpg"
+                     onclick="changeImage(this)" alt="Back">
+
+                <img src="images/tshirt-02-detail.jpg"
+                     onclick="changeImage(this)" alt="Detail">
+
+            </div>
+
+            <div class="product-info">
+
+                <h2>ESSENTIAL T-SHIRT 02</h2>
+
+                <p class="product-price">199 DH</p>
+
+                <a class="order-button"
+                   target="_blank"
+                   href="https://wa.me/212710822283?text=Hello%20FREEDOM%20CULTURE%2C%20I%20want%20T-shirt%2002">
+                    ORDER NOW ↗
+                </a>
+
+            </div>
+        </article>
+
+    </div>
+</main>
+
+<script>
+    function changeImage(thumbnail) {
+        const card = thumbnail.closest(".product-card");
+        const mainImage = card.querySelector(".main-product-image");
+
+        mainImage.src = thumbnail.src;
+    }
+</script>
+
+</body>
+</html>
