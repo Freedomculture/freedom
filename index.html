@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,6 +51,7 @@
 
             transition: all 0.35s ease;
             overflow: hidden;
+            isolation: isolate;
         }
 
         .glass-collection-btn::before {
@@ -71,6 +71,7 @@
 
             transform: skewX(-25deg);
             transition: 0.6s ease;
+            pointer-events: none;
         }
 
         .glass-collection-btn:hover {
@@ -87,17 +88,24 @@
             left: 150%;
         }
 
-        .glass-collection-btn span {
+        /* WHITE LIQUID GLASS POINTER */
+
+        .glass-pointer {
+            display: inline-block;
             position: relative;
             z-index: 1;
-        }
-
-        .glass-collection-btn {
-            isolation: isolate;
-        }
-
-        .glass-collection-btn > span {
+            color: #fff;
+            font-size: 23px;
+            font-weight: 400;
+            line-height: 1;
+            text-shadow: 0 0 12px rgba(255,255,255,0.55);
+            transition: transform 0.35s ease, text-shadow 0.35s ease;
             pointer-events: none;
+        }
+
+        .glass-collection-btn:hover .glass-pointer {
+            transform: translateX(5px);
+            text-shadow: 0 0 18px rgba(255,255,255,0.9);
         }
     </style>
 </head>
@@ -167,7 +175,7 @@
 
             <a href="collection.html" class="glass-collection-btn">
                 EXPLORE COLLECTION
-                <span>↗️</span>
+                <span class="glass-pointer">☞</span>
             </a>
 
         </section>
